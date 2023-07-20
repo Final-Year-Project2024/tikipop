@@ -1,9 +1,9 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
-import 'package:tikipap/app/data/constants/assets.dart';
+import 'package:google_sign_in/google_sign_in.dart';
 import 'package:tikipap/app/models/post_model.dart';
-import 'package:tikipap/app/modules/views/home/components/custom_icons.dart';
 import 'package:tikipap/app/modules/views/home/post_detail_page.dart';
 
 import '../home/components/post_card.dart';
@@ -29,9 +29,15 @@ class _ProfileViewState extends State<ProfileView> {
             style: TextStyle(fontSize: 18, color: Colors.black)),
         actions: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: CustomIcons(src: CustomAssets.kChat),
-          )
+              padding: const EdgeInsets.all(8.0),
+              child: IconButton(
+                onPressed: () {
+                  GoogleSignIn().signOut();
+                  FirebaseAuth.instance.signOut();
+                },
+                icon: Icon(Icons.logout_outlined),
+                color: Colors.grey,
+              ))
         ],
       ),
       body: AnimationLimiter(

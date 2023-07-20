@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "780762296475",
+    "project_id": "tikipop-d76b3",
+    "storage_bucket": "tikipop-d76b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:780762296475:android:4873db528364e12da6963e",
+        "android_client_info": {
+          "package_name": "com.example.tikipap"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "780762296475-5md0mkk4dbjvqg80td2ak9pj5pvlatpm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYg2MYqYM1UDPJ3Q9bE0wLPTgufqBXxq0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "780762296475-5md0mkk4dbjvqg80td2ak9pj5pvlatpm.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "780762296475-1v3f519kp968kel841n507kabji8ko50.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tikipap"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

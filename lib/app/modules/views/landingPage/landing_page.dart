@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:tikipap/app/data/constants/assets.dart';
 import 'package:tikipap/app/modules/views/profile/profile_view.dart';
+import 'package:tikipap/app/modules/views/upload/uploadpost.dart';
 
 import '../home/home_view.dart';
 
@@ -20,7 +21,7 @@ class _LandingPageState extends State<LandingPage> {
   List<dynamic> pages = [
     HomeView(),
     Container(),
-    const ProfileView(),
+    ProfileView(),
   ];
 
   @override
@@ -40,9 +41,14 @@ class _LandingPageState extends State<LandingPage> {
             TabItem(icon: SvgPicture.asset(CustomAssets.kUserIcon), title: ''),
           ],
           onTap: (int i) {
-            setState(() {
-              selectedIndex = i;
-            });
+            if (i != 1) {
+              setState(() {
+                selectedIndex = i;
+              });
+            } else {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => UploadPage()));
+            }
           },
         ));
   }

@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:tikipap/app/data/constants/assets.dart';
 
@@ -12,16 +13,15 @@ class ProfileCard extends StatelessWidget {
       alignment: Alignment.topCenter,
       children: [
         Container(
-          margin: const EdgeInsets.only(top: 50),
-          padding:
-              const EdgeInsets.only(left: 10, right: 10, top: 60, bottom: 20),
+          margin: EdgeInsets.only(top: 50),
+          padding: EdgeInsets.only(left: 10, right: 10, top: 60, bottom: 20),
           decoration: BoxDecoration(
               color: Colors.grey.withOpacity(0.1),
               borderRadius: BorderRadius.circular(10)),
-          child: const Column(
+          child: Column(
             children: [
               Text(
-                "Anabel May",
+                "${FirebaseAuth.instance.currentUser?.displayName}",
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 18,
@@ -45,9 +45,9 @@ class ProfileCard extends StatelessWidget {
           ),
         ),
         CircleAvatar(
-          radius: 50,
-          backgroundImage: AssetImage(CustomAssets.kUser1),
-        ),
+            radius: 50,
+            backgroundImage:
+                NetworkImage("${FirebaseAuth.instance.currentUser?.photoURL}")),
       ],
     );
   }
